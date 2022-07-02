@@ -12,3 +12,4 @@ starlette
 typing
 typing_extensions
 uvicorn
+gunicorn
