@@ -21,5 +21,3 @@ def read_item(item_id: int, q: Union[str, None] = None):
 def leer(data:cuerpo):
     data.nombre=data.nombre.upper()
     return data
-if __name__ == "__main__":
-    uvicorn.run("example:app", host="127.0.0.1", port=5000, log_level="info")
