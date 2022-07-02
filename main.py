@@ -1,7 +1,6 @@
 from typing import Union
 from fastapi import FastAPI
 from pydantic import BaseModel
-import uvicorn
 
 class cuerpo(BaseModel):
     nombre:str
