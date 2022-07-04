@@ -4,9 +4,16 @@ from pydantic import BaseModel
 
 class cuerpo(BaseModel):
     nombre:str
+
+class commit(BaseModel):
+    comit:str
+    hasid:str
+
 app = FastAPI()
 
-
+@app.post("/comit")
+def push_comit(data:commit):
+    return "se ralizado un commit en {data.comit}"
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
