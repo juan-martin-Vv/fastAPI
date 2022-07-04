@@ -10,13 +10,15 @@ class commit(BaseModel):
     hasid:str
 
 app = FastAPI()
-
+triger = commit
 @app.post("/comit")
 def push_comit(data:commit):
+    triger=data
     return "se ralizado un commit en "+data.comit+" con el ID :"+data.hasid
+
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return "se ralizado un commit en "+triger.comit+" con el ID :"+triger.hasid
 
 
 @app.get("/items/{item_id}")
