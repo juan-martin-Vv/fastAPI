@@ -1,25 +1,27 @@
+
 from typing import Union
 from fastapi import FastAPI
-from pydantic import BaseModel
+from models import *
+from database import inicia, insertDB, leerDBall, leerDBlast
 
-class cuerpo(BaseModel):
-    nombre:str
-
-class commit(BaseModel):
-    comit:str
-    hasid:str
 
 app = FastAPI()
+inicia()
 triger = commit(comit="",hasid="")
 @app.post("/comit/")
 def push_comit(data:commit):
     global triger
     triger = data
+    insertDB(data.comit,data.hasid)
     return "se ha detectado un commit"
 
 @app.get("/")
 def read_root():
-    return "se ralizado un commit en "+triger.comit+" con el ID :"+triger.hasid
+    data:commit
+    data=leerDBlast()
+    print(data)
+    # return data
+    return "se ralizado un commit en "+data.comit+" con el ID :"+data.hasid
 
 
 @app.get("/items/{item_id}")
