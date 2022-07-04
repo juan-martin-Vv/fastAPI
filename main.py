@@ -23,6 +23,11 @@ def read_root():
     # return data
     return "se ralizado un commit en "+data.comit+" con el ID :"+data.hasid
 
+@app.get("/all")
+def read_root():
+    data:commit
+    data=leerDBlast()
+    return data
 
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: Union[str, None] = None):
