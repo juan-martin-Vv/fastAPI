@@ -13,7 +13,7 @@ app = FastAPI()
 
 @app.post("/comit")
 def push_comit(data:commit):
-    return "se ralizado un commit en {data.comit}"
+    return "se ralizado un commit en "+data.comit+" con el ID :"+data.hasid
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
