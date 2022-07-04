@@ -11,10 +11,11 @@ class commit(BaseModel):
 
 app = FastAPI()
 triger = commit(comit="",hasid="")
-@app.post("/comit")
+@app.post("/comit/")
 def push_comit(data:commit):
-    triger=data
-    return "se ralizado un commit en "+data.comit+" con el ID :"+data.hasid
+    global triger
+    triger = data
+    return "se ha detectado un commit"
 
 @app.get("/")
 def read_root():
