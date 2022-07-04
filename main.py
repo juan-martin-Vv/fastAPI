@@ -8,7 +8,7 @@ from database import inicia, insertDB, leerDBall, leerDBlast
 app = FastAPI()
 inicia()
 triger = commit(comit="",hasid="")
-@app.post("/comit/")
+@app.post("/comit")
 def push_comit(data:commit):
     global triger
     triger = data
