@@ -10,7 +10,7 @@ class commit(BaseModel):
     hasid:str
 
 app = FastAPI()
-triger = commit
+triger = commit(comit="",hasid="")
 @app.post("/comit")
 def push_comit(data:commit):
     triger=data
