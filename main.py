@@ -26,7 +26,7 @@ def read_root():
 @app.get("/all")
 def read_root():
     data:commit
-    data=leerDBlast()
+    data=leerDBall()
     return data
 
 @app.get("/items/{item_id}")
