@@ -1,7 +1,7 @@
 import sqlite3
 from models import *
 
-databaseName="commit.db"
+databaseName="commitv1.db"
 def inicia():
     # if  open("commit.db","r") != None:
     #     return
